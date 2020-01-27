@@ -1,7 +1,12 @@
 
-template<class T>
-class function {
+class SIGMOID {
 public:
-    virtual T act() = 0;
-    virtual T dct() = 0;
-}
+	double static act(double input);
+	double static dct(double input);
+};
+
+class RELU {
+public:
+	double static act(double input);
+	double static dct(double input);
+};
