@@ -3,9 +3,9 @@
 
 int main() {
 
-	network nw = network(3);
+	network nw = network();
 
-	printf(nw.numOfLayers);
+	//printf(nw.numOfLayers);
 
 	return 0;
 }
