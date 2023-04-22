@@ -26,5 +26,6 @@ public:
 		adjFunc = fullyConnected;
 	}
 
+	int setAdjFunc(bool (*adjFunction)(int, int));
 	int initialize(int layerSize[], int arrSize);
 };

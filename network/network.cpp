@@ -1,5 +1,22 @@
+#include "adj_functions.h"
 #include "network.h"
 #include <algorithm>
+
+int network::setAdjFunc(bool (*adjFunction)(int, int)) {
+	if (adjFunction != nullptr) {
+		adjFunc = adjFunction;
+	}
+
+	try {
+		adjFunc(0, 0);
+	} catch(bool (*exception)(int, int)) {
+
+		adjFunc = fullyConnected;
+		return 1;
+	}
+
+	return 0;
+}
 
 int network::initialize(int layerSize[], int arrSize) {
 	//numOfLayers = sizeof(layerSize) / sizeof(layerSize[0]);

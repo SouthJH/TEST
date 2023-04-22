@@ -1,11 +1,13 @@
-#include <stdio.h>
-#include "network/network.h"
+#include <iostream>
+#include "network.h"
 
 int main() {
 
 	network nw = network();
 
-	//printf(nw.numOfLayers);
+	int val = nw.setAdjFunc(nullptr);
+
+	std::cout << val << std::endl;
 
 	return 0;
 }
