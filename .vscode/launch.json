@@ -9,7 +9,7 @@
       "stopAtEntry": false,
       "externalConsole": true,
       "cwd": "d:/workspace/git repository/TEST",
-      "program": "d:/workspace/Debug/outDebug",
+      "program": "d:/workspace/git repository/TEST/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

@@ -1,3 +1,5 @@
+#include "adj_functions.h"
+
 #define	errCode	0x1000
 
 
@@ -10,6 +12,8 @@ private:
 	int totalLength;
 	int *eachLayerSize;
 
+	bool (*adjFunc)(int, int);
+
 public:
 
 	network() {
@@ -18,6 +22,8 @@ public:
 
 		eachLayerSize = nullptr;
 		weight = nullptr;
+
+		adjFunc = fullyConnected;
 	}
 
 	int initialize(int layerSize[], int arrSize);
