@@ -1,17 +1,16 @@
-#include "adj_functions.h"
 #include "network.h"
 #include <algorithm>
 
-int network::setAdjFunc(bool (*adjFunction)(int, int)) {
-	if (adjFunction != nullptr) {
-		adjFunc = adjFunction;
-	}
-
+int network::setAdjFunc(AdjFunction _adjFunc) {
+	AdjFunction tempAdj = adjFunc;
+	
 	try {
-		adjFunc(0, 0);
-	} catch(bool (*exception)(int, int)) {
+		adjFunc.isConnected(0, 0, 0, 0);
+		adjFunc = _adjFunc;
+		
+	} catch(AdjFunction exception) {
 
-		adjFunc = fullyConnected;
+		adjFunc = tempAdj;
 		return 1;
 	}
 

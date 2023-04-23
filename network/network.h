@@ -12,7 +12,7 @@ private:
 	int totalLength;
 	int *eachLayerSize;
 
-	bool (*adjFunc)(int, int);
+	AdjFunction adjFunc;
 
 public:
 
@@ -23,9 +23,9 @@ public:
 		eachLayerSize = nullptr;
 		weight = nullptr;
 
-		adjFunc = fullyConnected;
+		adjFunc = fullyConnectedNetwork();
 	}
 
-	int setAdjFunc(bool (*adjFunction)(int, int));
+	int setAdjFunc(AdjFunction _adjFunc);
 	int initialize(int layerSize[], int arrSize);
 };

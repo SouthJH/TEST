@@ -1,7 +1,24 @@
+#include <string.h>
+
+class AdjFunction {
+private:
+	std::string name = "default";
+
+public:
+	AdjFunction() { }
+
+	void setName(std::string _name) {
+		name = _name;
+	}
+	std::string getName() {
+		return name;
+	}
+
+	bool isConnected(int LeftLayer, int LeftPerceptron, int RightLayer, int RightPerceptron) {
+		return true;
+	}
+};
 
 
-bool fullyConnected(int, int) {
-	return true;
-}
-
-bool CNN(int, int);
+class fullyConnectedNetwork : public AdjFunction {};
+class convolutionalNeuralNetwork : public AdjFunction {};
